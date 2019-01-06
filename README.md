@@ -12,6 +12,3 @@ $ git clone https://github.com/duncanlew/frontend-nanodegree-feedreader
 ```
 ### Step 2: Start the application
 Start the application by opening ```index.html``` in your browser of choice.
-
-## Demo website
-Alternatively, you can also run the demo web app by visiting the following link: [UdaciFeeds]( https://duncanlew.github.io/frontend-nanodegree-feedreader/)
