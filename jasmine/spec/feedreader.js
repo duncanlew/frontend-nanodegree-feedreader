@@ -37,10 +37,16 @@ $(function() {
             });
         });
 
-        /* TODO: Write a test that loops through each feed
+        /* A test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('contain a name that is not empty', function() {
+            allFeeds.forEach(singleFeed => {
+                expect(singleFeed.name).toBeDefined();
+                expect(singleFeed.name).not.toBeNull();
+            });
+        });
     });
 
 
