@@ -88,16 +88,20 @@ $(function () {
         });
 
         it('contains at least one entry', function (done) {
-            expect($(".feed a").length).toBeGreaterThanOrEqual(1);
+            expect($(".feed .entry-link").length).toBeGreaterThanOrEqual(1);
             done();
         });
     });
 
+    /* A new test suite named "New Feed Selection" */
+    describe('New feed selection', function () {
+        /* A test that ensures when a new feed is loaded
+         * by the loadFeed function that the content actually changes.
+         * Remember, loadFeed() is asynchronous.
+         */
+        
+    });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
 
-    /* TODO: Write a test that ensures when a new feed is loaded
-     * by the loadFeed function that the content actually changes.
-     * Remember, loadFeed() is asynchronous.
-     */
+
 }());
