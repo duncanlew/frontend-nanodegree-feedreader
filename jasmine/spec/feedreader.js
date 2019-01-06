@@ -78,8 +78,6 @@ $(function () {
         /* A test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function (done) {
             loadFeed(0, function () {
@@ -93,13 +91,28 @@ $(function () {
         });
     });
 
-    /* A new test suite named "New Feed Selection" */
+    /* Test suite named "New Feed Selection" */
     describe('New feed selection', function () {
+        let initialAnchorObject;
+        let subsequentAnchorObject;
+
+        beforeEach(function (done) {
+            loadFeed(1, function () {
+                initialAnchorObject = $(".feed").children().first();
+                loadFeed(0, function () {
+                    subsequentAnchorObject = $(".feed").children().first();
+                    done();
+                });
+            });
+        });
+
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
          */
-        
+        it('changes content when reloaded with a different feed', function (done) {
+            expect(initialAnchorObject).not.toBe(subsequentAnchorObject);
+            done();
+        });
     });
 
 
